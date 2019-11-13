@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Julius+Sans+One&display=swap');
+
+
+.list-card {
+    font-family: 'Julius Sans One', sans-serif;
+    
+    font-size: 20px;
+    width: 300px;
+    border: 1px solid lightgray;
+    height: 200px;
+    text-align: center;
+}
+
+.list-card h1 {
+    border: .5px solid #736F81;
+}
+
+
+.new-list-button {
+    font-size: 20px;
+    font-family: 'Julius Sans One', sans-serif;
+    font-weight: bold;
+    width: 300px;
+    height: 200px;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+
+.new-list-button:hover {
+    background-color: rgb(245, 230, 232);
+}   
+
+.list-container {
+    display: flex;
+    color: #2A3446;
+    justify-content: space-evenly;
+    align-items: space-evenly;
+    flex-flow: row wrap;
+    padding-left: 1rem;
+}
+
+.list-container > .list-card, .list-container > .new-list-button {
+    margin-bottom: 2rem;
+    color: #2A3446;
+
+}
