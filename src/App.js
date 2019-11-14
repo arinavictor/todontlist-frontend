@@ -98,6 +98,7 @@ export default class App extends Component {
                 currentUser={this.state.currentUser}
                 editTodo={this.editTodo}
                toggleAddTodoForm={this.toggleAddTodoForm}
+               isAddTodoFormShowing={this.state.isAddTodoFormShowing}
                 />
           </section>
 

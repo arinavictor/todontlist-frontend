@@ -40,7 +40,6 @@ export default class ListForm extends Component {
                 value={this.state.newList.name}
                 onChange={this.handleChange("name")}
             />
-            {/* <input id="form-submit" type="submit" value="Create List" /> */}
             <button id='form-submit' onClick={this.handleSubmit}>Create List</button>
            </form>
         )
