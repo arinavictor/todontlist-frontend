@@ -6,6 +6,8 @@ export default class AddTodoForm extends Component{
         newTodo: {
             title: "",
             description: "",
+            done: false,
+            list_id: this.props.listId
         }
     }
 
@@ -21,7 +23,7 @@ export default class AddTodoForm extends Component{
 
         const { title, description } = this.state.newTodo
         
-        this.props.postTodo()
+        // this.props.postTodo({title, description})
 
     }
 

@@ -17,7 +17,7 @@ export default function List({name, todos, deleteList, id, toggleAddTodoForm, is
             <button onClick={toggleAddTodoForm}>Add a todo</button>
             {
                 isAddTodoFormShowing
-                ? <AddTodoForm postTodo={postTodo}/>
+                ? <AddTodoForm postTodo={postTodo} listId={id}/>
                 : console.log("false")
             }
 
