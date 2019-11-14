@@ -1,0 +1,11 @@
+.todo-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+    position: relative;
+}
+
+.fa-trash {
+    position: absolute;
+  right: 4px;
+}

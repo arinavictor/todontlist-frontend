@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import '../styles/AddTodoForm.css'
+
 export default class AddTodoForm extends Component{
 
     state = {
@@ -15,7 +17,6 @@ export default class AddTodoForm extends Component{
         const newTodo = this.state.newTodo
         newTodo[property] = event.target.value
         this.setState({ newTodo })
-        console.log("state change", this.state.newTodo)
     }
 
     handleSubmit = (event) => {
@@ -26,7 +27,7 @@ export default class AddTodoForm extends Component{
 
     render() {
         return (
-            <form className='list-form'>
+            <form className='add-todo-form'>
                 <input 
                     type='text'
                     placeholder='Todo Title'

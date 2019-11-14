@@ -1,21 +1,33 @@
 .todo-items {
     display: flex;
-    border: 1px solid rgba(63, 61, 61, 0.3);
-    flex-flow: row wrap;
+    /* border: 1px solid rgba(63, 61, 61, 0.3); */
+    flex-direction: column;
     justify-content: space-between;
     
 }
 
 .fa.fa-times-circle {
     position: absolute;
-    bottom: 0;
-    right:0;
+    top: 3px;
+    right: 5px;
 }
 
 .list-card {
+    background-color: rgba(115, 111, 129, 0.5);
+    color: #EDE5E0;
     position: relative;
+    border-radius: 5px;
 }
 
 .list-card h1 {
+    font-size: 25px;
+    font-weight: bold;
     margin-bottom: 10px;
+    border-bottom: 2px solid #736F81;
+}
+
+.fa-plus {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
 }
