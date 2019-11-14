@@ -62,17 +62,17 @@ export default class App extends Component {
   postTodo = todo => {
     console.log("post todo", todo)
     fetch(`${BASE_URL}/todos`, {
-      method: "POST",
-      headers: {
-          "Content-Type": "application/json"
-      },
-      body: JSON.stringify(todo)
-  }).then(response => response.json())
-  .then(todo => {
-    this.setState({
-      todos: [...this.state.todos, todo]
-    }) 
-})
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(todo)
+    }).then(response => response.json())
+      .then(todo => {
+        this.setState({
+          todos: [...this.state.todos, todo]
+        }) 
+    })
   }
 
   deleteList = (id) => {
