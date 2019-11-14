@@ -16,6 +16,15 @@ export default class AddTodoForm extends Component{
         console.log("state change", this.state.newTodo)
     }
 
+    handleSubmit = () => {
+        // event.preventDefault()
+
+        const { title, description } = this.state.newTodo
+        
+        this.props.postTodo()
+
+    }
+
     render() {
         return (
             <form className='list-form'>
@@ -33,7 +42,7 @@ export default class AddTodoForm extends Component{
                     onChange={this.handleChange("description")}
                 />
               
-                <button id='form-submit' >Create List</button>
+                <button id='form-submit' onClick={this.handleSubmit}>Create Todo</button>
                </form>
         )
     }

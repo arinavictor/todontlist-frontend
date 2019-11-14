@@ -3,7 +3,7 @@ import Todo from './Todo'
 import '../styles/List.css'
 import AddTodoForm from './AddTodoForm'
 
-export default function List({name, todos, deleteList, id, toggleAddTodoForm, isAddTodoFormShowing}) {
+export default function List({name, todos, deleteList, id, toggleAddTodoForm, isAddTodoFormShowing, postTodo}) {
   
     return (
         <div className='list-card'>
@@ -17,7 +17,7 @@ export default function List({name, todos, deleteList, id, toggleAddTodoForm, is
             <button onClick={toggleAddTodoForm}>Add a todo</button>
             {
                 isAddTodoFormShowing
-                ? <AddTodoForm />
+                ? <AddTodoForm postTodo={postTodo}/>
                 : console.log("false")
             }
 

@@ -59,6 +59,26 @@ export default class App extends Component {
     })
   }
 
+  postTodo = todo => {
+    console.log("post todo", todo)
+//     fetch(`${BASE_URL}/todos`, {
+//       method: "POST",
+//       headers: {
+//           "Content-Type": "application/json"
+//       },
+//       body: JSON.stringify(todo)
+//   }).then(response => response.json())
+//   .then(list => {
+//     const {data} = list
+     
+//     this.setState({
+//       lists: [...this.state.lists, data], 
+//       isCreateListShowing: false,
+//     })
+    
+// })
+  }
+
   deleteList = (id) => {
     fetch(`${BASE_URL}/lists/${id}`, {
       method: "DELETE", 
@@ -99,6 +119,7 @@ export default class App extends Component {
                 editTodo={this.editTodo}
                toggleAddTodoForm={this.toggleAddTodoForm}
                isAddTodoFormShowing={this.state.isAddTodoFormShowing}
+               postTodo={this.postTodo}
                 />
           </section>
 
