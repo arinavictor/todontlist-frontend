@@ -3,7 +3,9 @@ import List from '../components/List'
 import '../styles/ListContainer.css'
 
 
-export default function ListContainer({lists, deleteList, currentUser, todos, editTodo, postTodo}) {
+export default function ListContainer({
+     lists, deleteList, currentUser,
+     todos, editTodo, deleteTodo, postTodo}) {
 
         const allLists = () => {
            return lists.map(list => {
@@ -15,6 +17,7 @@ export default function ListContainer({lists, deleteList, currentUser, todos, ed
                         deleteList={deleteList}
                         editTodo={editTodo}
                         postTodo={postTodo}
+                        deleteTodo={deleteTodo}
                         currentUser={currentUser}
                         />
                 </div>)

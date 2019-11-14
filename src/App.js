@@ -88,6 +88,19 @@ export default class App extends Component {
     })
   }  
 
+  deleteTodo = id => {
+    fetch(`${BASE_URL}/todos/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      }).then(() => {
+        this.setState({
+          todos: this.state.todos.filter(todo => todo.id !== id)
+        })
+      })
+  }
+
     toggleCreateList = () => {
       this.setState({isCreateListShowing: true})
      }
@@ -112,6 +125,7 @@ export default class App extends Component {
                 todos={this.state.todos}
                 editTodo={this.editTodo}
                 postTodo={this.postTodo}
+                deleteTodo={this.deleteTodo}
                 />
           </section>
 
