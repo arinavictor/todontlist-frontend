@@ -6,10 +6,9 @@ export default function AddTodoForm() {
             <input 
                 type='text'
                 placeholder='Work, capstone project, etc...'
-                value={this.state.newList.name}
-                onChange={this.handleChange("name")}
+               
             />
-            <button id='form-submit' onClick={this.handleSubmit}>Create List</button>
+            <button id='form-submit' >Create List</button>
            </form>
     )
 }

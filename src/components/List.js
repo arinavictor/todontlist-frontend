@@ -1,6 +1,7 @@
 import React from 'react'
 import Todo from './Todo'
 import '../styles/List.css'
+import AddTodoForm from './AddTodoForm'
 
 export default function List({name, todos, deleteList, id, toggleAddTodoForm, isAddTodoFormShowing}) {
   
@@ -16,7 +17,7 @@ export default function List({name, todos, deleteList, id, toggleAddTodoForm, is
             <button onClick={toggleAddTodoForm}>Add a todo</button>
             {
                 isAddTodoFormShowing
-                ? console.log("True")
+                ? <AddTodoForm />
                 : console.log("false")
             }
 
