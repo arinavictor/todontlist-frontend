@@ -1,4 +1,21 @@
 .todo-items {
     display: flex;
+    border: 1px solid rgba(63, 61, 61, 0.3);
+    flex-flow: row wrap;
+    justify-content: space-between;
     
+}
+
+.fa.fa-times-circle {
+    position: absolute;
+    bottom: 0;
+    right:0;
+}
+
+.list-card {
+    position: relative;
+}
+
+.list-card h1 {
+    margin-bottom: 10px;
 }

@@ -11,9 +11,11 @@ export default class App extends Component {
     state = {
       currentUser: {},
       lists: [],
+      todos: [],
       isCreateListShowing: false, 
       
   }
+  
 
   componentDidMount(){
     fetch(`${BASE_URL}/users`)
@@ -22,18 +24,21 @@ export default class App extends Component {
   }
 
     setThisState = (userObject) => {
-      const currentUser = userObject.data[0].attributes
+      const currentUser = userObject.data[0]
       const lists = userObject.data[0].attributes.list_with_todos.data
+      const todos = userObject.data[0].attributes.list_with_todos.data
 
       this.setState({
           currentUser: {
               id: currentUser.id,
-              username: currentUser.username,
+              username: currentUser.attributes.username,
           },
-          lists
+          lists, 
+          todos
       })
-    
-  }
+    }
+
+
     postList = list => {
       fetch(`${BASE_URL}/lists`, {
           method: "POST",
@@ -43,20 +48,34 @@ export default class App extends Component {
           body: JSON.stringify(list)
       }).then(response => response.json())
       .then(list => {
+        const {data} = list
+         
         this.setState({
-          lists: [...this.state.lists, list]
+          lists: [...this.state.lists, data], 
+          isCreateListShowing: false,
         })
+        
     })
   }
-  
+
+  deleteList = (id) => {
+    fetch(`${BASE_URL}/lists/${id}`, {
+      method: "DELETE", 
+      header: {
+        "Content-Type": "application/json"
+      },
+    }).then(() => {
+      this.setState({
+        lists: this.state.lists.filter(list => list.id !== id)
+      })
+    })
+  }  
 
     toggleCreateList = () => {
-    const {isCreateListShowing} = this.state
-      this.setState({isCreateListShowing: !isCreateListShowing})
+      this.setState({isCreateListShowing: true})
      }
 
-
-
+    
   render() {
     return (
       <div className="App">
@@ -66,7 +85,12 @@ export default class App extends Component {
 
         <main>
           <section className='list-container'>
-            <ListContainer lists={this.state.lists}/>
+            <ListContainer 
+                lists={this.state.lists} 
+                deleteList={this.deleteList} 
+                currentUser={this.state.currentUser}
+                editTodo={this.editTodo}
+                />
           </section>
 
           <div className='button-wrapper'>
@@ -74,17 +98,12 @@ export default class App extends Component {
                   <span>
                     {
                       this.state.isCreateListShowing
-                          ? null
+                          ? <ListForm className='list-form' handleSubmit={this.postList}/>
                           : "CREATE A NEW LIST"
                     }
                   </span>
               </button>
           </div>
-          {
-            this.state.isCreateListShowing
-            ? <ListForm handleSubmit={this.postList} />
-            : null
-          }
         </main>
   
        

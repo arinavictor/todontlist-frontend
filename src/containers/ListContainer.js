@@ -3,22 +3,21 @@ import List from '../components/List'
 import '../styles/ListContainer.css'
 
 
-export default function ListContainer({lists}) {
-    const lastElement = lists.slice(-1)[0]
+export default function ListContainer({lists, deleteList, currentUser, editTodo}) {
 
-    console.log(lists)
-
-    
         const allLists = lists.map(list => {
             return (<div key={list.id} className='list-card'>
                 <List 
-                    name={list.attributes.name} todos={list.attributes.todos} 
+                    name={list.attributes.name}
+                    id={list.id}
+                    todos={list.attributes.todos}
+                    deleteList={deleteList}
+                    editTodo={editTodo}
+                    currentUser={currentUser}
                     />
             </div>)
         })
     
-       
-
         return (
             <>
                 {allLists}

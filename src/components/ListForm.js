@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import '../styles/ListForm.css'
 
 export default class ListForm extends Component {
 
@@ -32,16 +33,18 @@ export default class ListForm extends Component {
     }
     render() {
         return (
-           <form className='list-form' onSubmit={this.handleSubmit}>
+           <form className='list-form'>
             <input 
                 type='text'
                 placeholder='Work, capstone project, etc...'
                 value={this.state.newList.name}
                 onChange={this.handleChange("name")}
             />
-            <input type="submit" value="Create List" />
-
+            {/* <input id="form-submit" type="submit" value="Create List" /> */}
+            <button id='form-submit' onClick={this.handleSubmit}>Create List</button>
            </form>
         )
     }
 }
+
+// onSubmit={this.handleSubmit}

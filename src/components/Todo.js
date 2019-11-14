@@ -13,10 +13,16 @@ export default function Todo(props) {
             todo.description
         )
     })
+
+    const todoId = props.todos.map(todo => {
+        return(
+            todo.id
+        )
+    })
     return (
-        <>
-            <h2>{todoTitle}</h2>
+        <div className='todo-info'>
+            <h2 onClick={() => props.editTodo(todoId)}>{todoTitle}</h2>
             <p>{todoDesc}</p>
-        </>
+        </div>
     )
 }
