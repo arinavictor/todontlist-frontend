@@ -1,19 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Julius+Sans+One&display=swap');
 
-
-.list-card {
-    font-family: 'Julius Sans One', sans-serif;
-    
-    font-size: 20px;
-    width: 300px;
-    border: 1px solid lightgray;
-    height: 200px;
-    text-align: center;
-}
-
-
-
-
 .new-list-button {
     display: flex;
     justify-content: center;
@@ -21,9 +7,9 @@
     font-family: 'Julius Sans One', sans-serif;
     color: #736F81;
     font-weight: bold;
-    width: 300px;
-    height: 200px;
-    background-color: Transparent;
+    width: 250px;
+    height: 150px;
+    background-color: rgba(205, 186, 189, 0.8);
     background-repeat:no-repeat;
     cursor:pointer;
     overflow: hidden;
@@ -32,7 +18,7 @@
 }
 
 .new-list-button:hover {
-    background-color: rgba(146, 127, 137, 0.3);
+    background-color: rgba(146, 127, 137, 0.75);
     color: white;
 }   
 
@@ -43,6 +29,7 @@
     align-items: space-evenly;
     flex-flow: row wrap;
     padding-left: 1rem;
+    position: relative;
 }
 
 .list-container > .list-card, .list-container > .new-list-button {

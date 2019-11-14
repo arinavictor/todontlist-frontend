@@ -105,18 +105,14 @@ export default class App extends Component {
       this.setState({isCreateListShowing: true})
      }
 
-  
-    
-    
   render() {
-    console.log(this.state.todos)
     return (
       <div className="App">
         <header className='nav-bar'>
            <Nav />
         </header>
 
-        <main>
+        <main className='main-section'>
           <section className='list-container'>
             <ListContainer 
                 lists={this.state.lists} 
@@ -127,9 +123,7 @@ export default class App extends Component {
                 postTodo={this.postTodo}
                 deleteTodo={this.deleteTodo}
                 />
-          </section>
-
-          <div className='button-wrapper'>
+           <div className='button-wrapper'>
               <button className='new-list-button' onClick={this.toggleCreateList}>
                   <span>
                     {
@@ -140,6 +134,9 @@ export default class App extends Component {
                   </span>
               </button>
           </div>
+          </section>
+
+         
         </main>
   
        

@@ -13,10 +13,16 @@
 }
 
 .list-card {
-    background-color: rgba(115, 111, 129, 0.5);
+    position: absolute;
+    font-family: 'Julius Sans One', sans-serif;
+    background-color: rgba(115, 111, 129, 0.75);
     color: #EDE5E0;
     position: relative;
     border-radius: 5px;
+    font-size: 20px;
+    width: 400px;
+    height: 300px;
+    text-align: center;
 }
 
 .list-card h1 {

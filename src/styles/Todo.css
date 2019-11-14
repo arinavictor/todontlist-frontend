@@ -3,9 +3,14 @@
     justify-content: space-between;
     margin-bottom: 4px;
     position: relative;
+    
 }
 
-.fa-trash {
-    position: absolute;
+.todo-action-buttons {
+  position: absolute;
   right: 4px;
+}
+
+.fa-pencil {
+    margin-right: 15px;
 }
