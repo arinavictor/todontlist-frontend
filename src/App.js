@@ -13,8 +13,6 @@ export default class App extends Component {
       lists: [],
       todos: [],
       isCreateListShowing: false, 
-      isAddTodoFormShowing: false,
-      
   }
   
 
@@ -27,7 +25,10 @@ export default class App extends Component {
     setThisState = (userObject) => {
       const currentUser = userObject.data[0]
       const lists = userObject.data[0].attributes.list_with_todos.data
-      const todos = userObject.data[0].attributes.list_with_todos.data
+      const todos = userObject.data[0].attributes.list_with_todos.data.map(list => {
+         return list.attributes.todos
+      })
+
 
       this.setState({
           currentUser: {
@@ -35,7 +36,7 @@ export default class App extends Component {
               username: currentUser.attributes.username,
           },
           lists, 
-          todos
+          todos: todos.flat()
       })
     }
 
@@ -60,7 +61,6 @@ export default class App extends Component {
   }
 
   postTodo = todo => {
-    console.log("post todo", todo)
     fetch(`${BASE_URL}/todos`, {
         method: "POST",
         headers: {
@@ -70,7 +70,7 @@ export default class App extends Component {
     }).then(response => response.json())
       .then(todo => {
         this.setState({
-          todos: [...this.state.todos, todo]
+          todos: [...this.state.todos, todo],
         }) 
     })
   }
@@ -93,13 +93,10 @@ export default class App extends Component {
      }
 
   
-     toggleAddTodoForm = () => {
-       console.log("We made it", this.state.isAddTodoFormShowing)
-       const {isAddTodoFormShowing} = this.state
-      this.setState({isAddTodoFormShowing: !isAddTodoFormShowing})
-     }
+    
     
   render() {
+    console.log(this.state.todos)
     return (
       <div className="App">
         <header className='nav-bar'>
@@ -112,10 +109,9 @@ export default class App extends Component {
                 lists={this.state.lists} 
                 deleteList={this.deleteList} 
                 currentUser={this.state.currentUser}
+                todos={this.state.todos}
                 editTodo={this.editTodo}
-               toggleAddTodoForm={this.toggleAddTodoForm}
-               isAddTodoFormShowing={this.state.isAddTodoFormShowing}
-               postTodo={this.postTodo}
+                postTodo={this.postTodo}
                 />
           </section>
 

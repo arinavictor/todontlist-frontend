@@ -19,11 +19,8 @@ export default class AddTodoForm extends Component{
     }
 
     handleSubmit = (event) => {
-        event.preventDefault()
-
-        const { title, description, done, list_id } = this.state.newTodo
-        
-        this.props.postTodo({title, description, done, list_id})
+        event.preventDefault()    
+        this.props.postTodo(this.state.newTodo)
 
     }
 
