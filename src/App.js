@@ -13,6 +13,7 @@ export default class App extends Component {
       lists: [],
       todos: [],
       isCreateListShowing: false, 
+      isAddTodoFormShowing: false,
       
   }
   
@@ -75,6 +76,12 @@ export default class App extends Component {
       this.setState({isCreateListShowing: true})
      }
 
+  
+     toggleAddTodoForm = () => {
+       console.log("We made it", this.state.isAddTodoFormShowing)
+       const {isAddTodoFormShowing} = this.state
+      this.setState({isAddTodoFormShowing: !isAddTodoFormShowing})
+     }
     
   render() {
     return (
@@ -90,6 +97,7 @@ export default class App extends Component {
                 deleteList={this.deleteList} 
                 currentUser={this.state.currentUser}
                 editTodo={this.editTodo}
+               toggleAddTodoForm={this.toggleAddTodoForm}
                 />
           </section>
 
