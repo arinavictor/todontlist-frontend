@@ -18,7 +18,6 @@ export default function ListContainer({
                         editTodo={editTodo}
                         postTodo={postTodo}
                         deleteTodo={deleteTodo}
-                        editTodo={editTodo}
                         currentUser={currentUser}
                         />
                 </div>)

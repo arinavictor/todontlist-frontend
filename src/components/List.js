@@ -37,12 +37,15 @@ render() {
                 <span>
                      <i className="fa fa-times-circle" onClick={() => deleteList(listId)}></i>          
                 </span>
-                <i className="fa fa-plus" onClick={toggleAddTodoForm}></i>
-                {
-                    isAddTodoFormShowing
-                    ? <AddTodoForm postTodo={postTodo} toggleAddTodoForm={toggleAddTodoForm} listId={listId}/>
-                    : false
-                }
+                <div className='add-todo-container'>
+                    <i className="fa fa-plus" onClick={toggleAddTodoForm}></i>
+                    {
+                        isAddTodoFormShowing
+                        ? <AddTodoForm postTodo={postTodo} toggleAddTodoForm={toggleAddTodoForm} listId={listId}/>
+                        : false
+                    }
+                </div>
+
     
             </div>
         )

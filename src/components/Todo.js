@@ -9,7 +9,7 @@ export default function Todo(props) {
     const editTodo = () => {
         fetchEditTodo()
     }
-    const {title, description, id} = props.todo
+    const {title, id} = props.todo
     const {fetchDeleteTodo, fetchEditTodo} = props
 
     return (

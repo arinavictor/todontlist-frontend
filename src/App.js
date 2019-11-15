@@ -115,7 +115,7 @@ export default class App extends Component {
       <div className="App">
         <section className='header-items'>
           <header className='header'>
-            <img src={Logo}></img>
+            <img alt='Logo' src={Logo}></img>
           </header>
            <Nav />
         </section>
@@ -130,7 +130,6 @@ export default class App extends Component {
                 editTodo={this.editTodo}
                 postTodo={this.postTodo}
                 deleteTodo={this.deleteTodo}
-                editTodo={this.editTodo}
                 />
            <div className='button-wrapper'>
               <button className='new-list-button' onClick={this.toggleCreateList}>
