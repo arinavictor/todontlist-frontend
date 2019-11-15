@@ -11,7 +11,7 @@ export default class List extends Component{
    
 render() {
 
-    const { name, todos, deleteList, listId, postTodo, deleteTodo} = this.props
+    const { name, todos, deleteList, listId, postTodo, editTodo, deleteTodo} = this.props
     const {isAddTodoFormShowing} = this.state
 
     const toggleAddTodoForm = () => {
@@ -22,7 +22,7 @@ render() {
         return todos.map(todo => {
             if (todo.list_id === +listId) {
                 return (<ol key={todo.id}>
-                    <Todo todo={todo} fetchDeleteTodo={deleteTodo}/>
+                    <Todo todo={todo} fetchDeleteTodo={deleteTodo} fetchEditTodo={editTodo}/>
                 </ol>  
                 )
             }

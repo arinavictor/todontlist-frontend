@@ -102,6 +102,10 @@ export default class App extends Component {
       })
   }
 
+  editTodo = () => {
+    console.log("edit function in the hizzy")
+  }
+
     toggleCreateList = () => {
       this.setState({isCreateListShowing: true})
      }
@@ -126,6 +130,7 @@ export default class App extends Component {
                 editTodo={this.editTodo}
                 postTodo={this.postTodo}
                 deleteTodo={this.deleteTodo}
+                editTodo={this.editTodo}
                 />
            <div className='button-wrapper'>
               <button className='new-list-button' onClick={this.toggleCreateList}>

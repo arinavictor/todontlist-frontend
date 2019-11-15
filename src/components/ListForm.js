@@ -9,8 +9,7 @@ export default class ListForm extends Component {
             user_id: 3,
         }
     }
-
-
+    
     handleChange = property => event => {
         const newList = this.state.newList
         newList[property] = event.target.value 
@@ -19,9 +18,7 @@ export default class ListForm extends Component {
 
     handleSubmit = event => {
         event.preventDefault()
-
         const { name, user_id } = this.state.newList
-        
         this.props.handleSubmit({ name, user_id })
 
         this.setState({
