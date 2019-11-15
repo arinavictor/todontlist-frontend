@@ -21,9 +21,9 @@ render() {
     const displayTodos = () => {
         return todos.map(todo => {
             if (todo.list_id === +listId) {
-                return (<div key={todo.id}>
+                return (<ol key={todo.id}>
                     <Todo todo={todo} fetchDeleteTodo={deleteTodo}/>
-                </div>  
+                </ol>  
                 )
             }
         })
@@ -41,7 +41,7 @@ render() {
                 {/* <button className='add-todo-button' >Add a todo</button> */}
                 {
                     isAddTodoFormShowing
-                    ? <AddTodoForm postTodo={postTodo} listId={listId}/>
+                    ? <AddTodoForm postTodo={postTodo} toggleAddTodoForm={toggleAddTodoForm} listId={listId}/>
                     : false
                 }
     

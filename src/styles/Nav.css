@@ -1,12 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Julius+Sans+One&display=swap');
 
 .logo {
-    width: 150px;
+    width: 400px;
+    /* height: 200px;\ */
+    
 }
 
 .nav-bar {
+    background-color: #CBBBBB;
     display: flex;
+    height: 180px;
     justify-content: center;
+    align-content: center;
     border-bottom: 1px solid black;
     padding-bottom: 10px;
     margin-bottom: 2rem;
@@ -14,30 +19,25 @@
 
 .nav-bar-items {
     width: 100%;
+    /* position: absolute; */
     padding-left: 10px;
     padding-right: 10px;
-    padding-top: 10px;
+    /* padding-top: 20px; */
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-}
-
-.search-bar {
-    height: 25px;
-}
-
-.search-bar:hover {
-    cursor: pointer;
-    
+    justify-content: center;
+    /* align-items: flex-end; */
 }
 
 .logout {
     font-family: 'Julius Sans One', sans-serif;
     font-weight: bold;
     width: 120px;
+    bottom: 20px;
+    right: 20px;
     height: 45px;
     font-size: 15px;
-    background-color: Transparent;
+    background-color: rgba(205, 186, 189, 0.5);
+    color: rgb(105, 101, 117);
     background-repeat:no-repeat;
     cursor:pointer;
     overflow: hidden;

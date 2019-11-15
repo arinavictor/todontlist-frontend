@@ -22,6 +22,7 @@ export default class AddTodoForm extends Component{
     handleSubmit = (event) => {
         event.preventDefault()    
         this.props.postTodo(this.state.newTodo)
+        this.props.toggleAddTodoForm()
 
     }
 
@@ -42,7 +43,8 @@ export default class AddTodoForm extends Component{
                     onChange={this.handleChange("description")}
                 />
               
-                <button id='form-submit' onClick={this.handleSubmit}>Create Todo</button>
+                <button 
+                    id='form-submit' onClick={this.handleSubmit}>Create Todo</button>
                </form>
         )
     }

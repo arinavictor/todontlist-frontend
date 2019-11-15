@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Logo from './images/banner.png'
 import Nav from './containers/Nav'
 import ListContainer from './containers/ListContainer'
 import ListForm from './components/ListForm';
@@ -108,9 +109,12 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className='nav-bar'>
+        <section className='header-items'>
+          <header className='header'>
+            <img src={Logo}></img>
+          </header>
            <Nav />
-        </header>
+        </section>
 
         <main className='main-section'>
           <section className='list-container'>

@@ -10,7 +10,7 @@ export default function Todo(props) {
 
     return (
         <div className='todo-info'>
-            <h2>{title}</h2>
+            <h2 className='todo-title'>{title}</h2>
             {/* <p>{description}</p> */}
             <span className='todo-action-buttons'>
                 <i className="fa fa-pencil"></i>

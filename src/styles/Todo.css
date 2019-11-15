@@ -3,9 +3,10 @@
     justify-content: space-between;
     margin-bottom: 4px;
     position: relative;
-    
 }
-
+.todo-title {
+    width: 270px;
+}
 .todo-action-buttons {
   position: absolute;
   right: 4px;
