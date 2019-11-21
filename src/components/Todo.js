@@ -15,7 +15,6 @@ export default function Todo(props) {
     return (
         <div className='todo-info'>
             <h2 className='todo-title'>{title}</h2>
-            {/* <p>{description}</p> */}
             <span className='todo-action-buttons'>
                 <i className="fa fa-pencil" onClick={editTodo}></i>
                 <i className="fa fa-trash" onClick={deleteTodo} ></i>

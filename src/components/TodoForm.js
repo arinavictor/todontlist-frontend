@@ -38,8 +38,6 @@ export default class TodoForm extends Component{
               description: "",
             }
            })
-        //    this.props.postTodo(this.state.newTodo)
-        //    this.props.toggleAddTodoForm()
         }
 
     render() {

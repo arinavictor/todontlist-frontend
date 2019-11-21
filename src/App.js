@@ -5,7 +5,7 @@ import Nav from './containers/Nav'
 import ListContainer from './containers/ListContainer'
 import ListForm from './components/ListForm';
 
-const BASE_URL = "http://localhost:9000"
+const BASE_URL = "https://todontlist.herokuapp.com"
 
 export default class App extends Component {
 
